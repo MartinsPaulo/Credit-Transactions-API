@@ -21,3 +21,48 @@
     <p><i>http://127.0.0.1:8000\api\l3</i></p>
  </p>
 
+<p><h1>Testes L1</h1></p>
+{
+	"account": "123",
+	"totalAmount": 40000.00,
+	"mcc": "5811",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
+
+{
+	"account": "123",
+	"totalAmount": 100.00,
+	"mcc": "9999",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
+
+{
+	"account": "99999",
+	"totalAmount": 100.00,
+	"mcc": "5811",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
+
+<p><h1>Testes L2</h1></p>
+--Não tem valor no cartão, feito no cash
+{
+	"account": "167",
+	"totalAmount": 260.00,
+	"mcc": "5411",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
+
+--mcc inesxistente feito no cash
+{
+	"account": "567",
+	"totalAmount": 100.00,
+	"mcc": "9999",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
+
+{
+	"account": "99999",
+	"totalAmount": 100.00,
+	"mcc": "5811",
+	"merchant": "PADARIA DO ZE               SAO PAULO BR"
+}
