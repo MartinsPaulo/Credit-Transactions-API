@@ -80,3 +80,47 @@
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
 ```
+<p><h1>L3 - Duvida Teorica</h1></p>
+Eu fiquei com uma dúvida teórica bem grande na L3. Então resolvi responder teoricamente o que faria, caso desejem que implemente, também posso fazer. 
+
+Se entendi corretamente o problema, eu apresentaria 3 possíveis soluções para discussão:
+
+Primeira: Ter uma tabela com todos estabelecimentos que nós conhecemos mapeada sua real categoria na base de dados, e seguir por esta tabela.
+Vantagem: Teoricamente rápido dependendo do nível da escalabilidade. 
+Desvantagem: Provavelmente não temos mapeado todos estabelecimentos do Brasil.
+
+Segunda: Esta opção, não consigo prever a eficácia por desconhecer a operação na prática, entretanto seria fazer uma tabela de mapeamento com palavras chaves. Se no nome do estabelecimento contiver as palavras Restaurante, lanchonete, bar ou similares, parece claro se tratar do grupo MEAL, se possui nome como spotify, hbo, cinema ou similares, também podemos encaixar em CULTURE… 
+<table border="1">
+    <tr>
+        Tabela relacional
+    </tr>
+    <tr>
+        <td>Cinema</td>
+        <td>CULTURE</td>
+    </tr>
+    <tr>
+        <td>HBO</td>
+        <td>CULTURE</td>
+    </tr>
+    <tr>
+        <td>Restaurante</td>
+        <td>MEAL</td>
+    </tr>
+    <tr>
+        <td>Bar</td>
+        <td>MEAL</td>
+    </tr>
+</table>
+Quando recebermos um nome de estabelicimento podemos quebrar a string do nome em diversos totens e fazer esta pesquisa em nossa tabela de mapeamento no banco de dados.
+Exemplo "Bar da Rosa", contem a palavra Bar, então retornaria MEAL.
+P.S: Para comparação ser precisa salvamos todos casos como maiúsculo ou minúsculo, e poderíamos verificar necessidade de acentuações.
+
+Terceira: Com base nas categorias que sabemos serem corretas (Provavelmente já existe algo assim salvo no banco de dados da empresa), aplicar um algoritmo preditivo, exemplo de Bayes, para que ele receba um nome desconhecido, e encaixe corretamente na sua categoria de benefício.
+Pode ser complementar com os outros métodos, ou dependendo de sua acurácia trabalhar sozinho.
+Desvantagem: Só fazendo testes para entender se o tempo de resposta e a acurácia seriam boas o suficiente para ser utilizado na produção, e o resultado pode ser negativo. 
+
+<p><h1>L4 - Resposta</h1></p>
+Implataria a estrutura de dados <a href="https://www.cos.ufrj.br/~rfarias/cos121/filas.html" target="blank">FILA</a> para operação. 
+Sempre que uma solicitação de compra for iniciada, ela entra em uma fila de processamento. Esta fila poderia ser uma tabela no banco de dados. 
+Então o própio servidor executaria a fila constantemente, respeitando a ordem de o primeiro a chegar é o primeiro a ser atendido. 
+Pensei em implementar no laravel usando os JOBS, mas seria mais trabalho configurar a suas maquinas do que a implementação, e como não trabalhamos com Laravel, pensei que talvez seria um pouco desnecessário, visto que a ideia é simples (embora a implementação nem tanto).
