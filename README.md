@@ -29,14 +29,16 @@
 	"mcc": "5811",
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
-
+```
+```yaml
 {
 	"account": "123",
 	"totalAmount": 100.00,
 	"mcc": "9999",
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
-
+```
+```yaml
 {
 	"account": "99999",
 	"totalAmount": 100.00,
@@ -62,7 +64,8 @@
 	"mcc": "9999",
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
-
+```
+```yaml
 {
 	"account": "99999",
 	"totalAmount": 100.00,
