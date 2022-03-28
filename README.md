@@ -22,6 +22,7 @@
  </p>
 
 <p><h1>Testes L1</h1></p>
+```yaml
 {
 	"account": "123",
 	"totalAmount": 40000.00,
@@ -42,17 +43,19 @@
 	"mcc": "5811",
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
-
+```
 <p><h1>Testes L2</h1></p>
 --Não tem valor no cartão, feito no cash
+```yaml
 {
 	"account": "167",
 	"totalAmount": 260.00,
 	"mcc": "5411",
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
-
+```
 --mcc inesxistente feito no cash
+```yaml
 {
 	"account": "567",
 	"totalAmount": 100.00,
@@ -66,3 +69,4 @@
 	"mcc": "5811",
 	"merchant": "PADARIA DO ZE               SAO PAULO BR"
 }
+```
